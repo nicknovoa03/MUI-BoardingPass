@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/MUI-BoardingPass/static/js/main.7343ee21.chunk.js",
+    "runtime-main.js": "/MUI-BoardingPass/static/js/runtime-main.a90c0f84.js",
+    "static/css/2.414dd51a.chunk.css": "/MUI-BoardingPass/static/css/2.414dd51a.chunk.css",
+    "static/js/2.68d6042f.chunk.js": "/MUI-BoardingPass/static/js/2.68d6042f.chunk.js",
+    "static/js/3.4e616b09.chunk.js": "/MUI-BoardingPass/static/js/3.4e616b09.chunk.js",
+    "index.html": "/MUI-BoardingPass/index.html",
+    "static/js/2.68d6042f.chunk.js.LICENSE.txt": "/MUI-BoardingPass/static/js/2.68d6042f.chunk.js.LICENSE.txt",
+    "static/media/BoardingPassLogo.9f027544.svg": "/MUI-BoardingPass/static/media/BoardingPassLogo.9f027544.svg",
+    "static/media/logoBlack-Box-Collective-Black-Gold.6a56c2a0.png": "/MUI-BoardingPass/static/media/logoBlack-Box-Collective-Black-Gold.6a56c2a0.png",
+    "static/media/logoBlack-Box-Collective-White-Gold.8944ef46.png": "/MUI-BoardingPass/static/media/logoBlack-Box-Collective-White-Gold.8944ef46.png",
+    "static/media/slick-theme.css": "/MUI-BoardingPass/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a90c0f84.js",
+    "static/css/2.414dd51a.chunk.css",
+    "static/js/2.68d6042f.chunk.js",
+    "static/js/main.7343ee21.chunk.js"
+  ]
+}
