@@ -1,7 +1,7 @@
 {
-  "name": "access-pass",
+  "name": "boarding-pass",
   "author": "Nick Novoa",
-  "homepage": "https://blackboxcollectiveboardingpass.io/",
+  "homepage": "https://nicknovoa03.github.io/MUI-BoardingPass/",
   "version": "1.0.0",
   "private": true,
   "scripts": {
