@@ -17,6 +17,8 @@ import { contractAddr, contract } from '../../../../contracts/BoardingPassContra
 
 import AccessPassLogo from '../../../../BlackBoxSamples/BoardingPassLogo.svg';
 
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 const Form = ({ colorInvert = false }) => {
   const theme = useTheme();
   const { mode } = theme.palette;
@@ -206,7 +208,7 @@ const Form = ({ colorInvert = false }) => {
           flexDirection: 'column',
           alignItems: 'center'
         }}>
-          <Typography variant="h5" sx={{mx:1}}>
+          <Typography variant="h5" sx={{ mx: 1 }}>
             Minting Amount:
           </Typography>
           <Box item sx={{ minWidth: 300 }}>
@@ -225,23 +227,11 @@ const Form = ({ colorInvert = false }) => {
               }}
             />
           </Box>
-          {wallet &&
-            <Web3Button
-              fullWidth
-              variant='contained'
-              onClick={mint}
-            >
-              Mint {mintAmount} for {precise(.275*mintAmount)} ETH
-            </Web3Button>
-          } {!wallet &&
-            <Web3Button
-              fullWidth
-              variant='contained'
-              onClick={() => connect()}
-            >
-              Connect
-            </Web3Button>
-          }
+
+          <ConnectButton>
+
+          </ConnectButton>
+
         </Grid>
         <Grid item xs={12}
           sx={{
