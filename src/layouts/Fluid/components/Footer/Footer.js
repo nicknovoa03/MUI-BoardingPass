@@ -59,7 +59,7 @@ const Footer = () => {
                 title='OpenSea'
                 underline="none"
                 component="a"
-                href="https://opensea.io/collection/black-box-collective-access-pass"
+                href="https://opensea.io/collection/black-box-collective-boarding-pass"
                 color="text.primary"
                 variant={'subtitle2'}
               >

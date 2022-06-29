@@ -93,7 +93,7 @@ const Form = ({ colorInvert = false }) => {
   }
 
   async function mint() {
-    const price = .08 * mintAmount;
+    const price = .275 * mintAmount;
     const mintable_price = price.toString();
 
     const tx = {
@@ -111,6 +111,10 @@ const Form = ({ colorInvert = false }) => {
   function handleSlider(event, value) {
     event.preventDefault();
     setMintAmount(value);
+  }
+
+  function precise(x) {
+    return x.toPrecision(4);
   }
 
   const Web3Button = styled(Button)({
@@ -227,7 +231,7 @@ const Form = ({ colorInvert = false }) => {
               variant='contained'
               onClick={mint}
             >
-              Mint {mintAmount} for {.08 * mintAmount} ETH
+              Mint {mintAmount} for {precise(.275*mintAmount)} ETH
             </Web3Button>
           } {!wallet &&
             <Web3Button
@@ -235,7 +239,7 @@ const Form = ({ colorInvert = false }) => {
               variant='contained'
               onClick={() => connect()}
             >
-              Connect Wallet
+              Connect
             </Web3Button>
           }
         </Grid>
@@ -261,7 +265,7 @@ const Form = ({ colorInvert = false }) => {
               mb: 2
             }}
           >
-            Connected Wallet:
+            Connected Account:
           </Typography>
           <WalletAddress />
           <Typography
