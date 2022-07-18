@@ -13,6 +13,7 @@ import { styled, useTheme } from '@mui/material/styles';
 import Web3 from 'web3';
 import Web3Modal from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 import { contractAddr, contract } from '../../../../contracts/BoardingPassContract';
 
 import AccessPassLogo from '../../../../BlackBoxSamples/BoardingPassLogo.svg';
@@ -59,29 +60,31 @@ const Form = ({ colorInvert = false }) => {
   }
 
   const providerOptions = {
-    injected: {
-      package: null
+    walletlink: {
+      package: CoinbaseWalletSDK,
+      options: {
+        appName:"Black Box Boarding Pass",
+        infuraId: 'bad8cc770bef49dc88683bf2290205c8' // required
+      }
     },
     walletconnect: {
       package: WalletConnectProvider,
-      network: 'ethereum',
       options: {
         infuraId: 'bad8cc770bef49dc88683bf2290205c8' // required
       }
-    }
+    },
   };
-
-  const web3Modal = new Web3Modal({
-    network: 'mainnet',
-    cacheProvider: true,
-    providerOptions
-  });
 
   async function connect() {
     try {
-      let provider;
-      provider = await web3Modal.connect();
-      let web3 = new Web3(provider);
+      let web3Modal = new Web3Modal({
+        network: 'mainnet',
+        theme:'dark',
+        cacheProvider: false,
+        providerOptions
+      });
+      const web3ModalInstance = await web3Modal.connect();
+      const web3 = new Web3(web3ModalInstance);
       setWeb3(web3);
       web3.eth.getAccounts().then(async (addr) => {
         setWallet(addr[0].toLocaleLowerCase());
@@ -206,7 +209,7 @@ const Form = ({ colorInvert = false }) => {
           flexDirection: 'column',
           alignItems: 'center'
         }}>
-          <Typography variant="h5" sx={{mx:1}}>
+          <Typography variant="h5" sx={{ mx: 1 }}>
             Minting Amount:
           </Typography>
           <Box item sx={{ minWidth: 300 }}>
@@ -231,7 +234,7 @@ const Form = ({ colorInvert = false }) => {
               variant='contained'
               onClick={mint}
             >
-              Mint {mintAmount} for {precise(.275*mintAmount)} ETH
+              Mint {mintAmount} for {precise(.275 * mintAmount)} ETH
             </Web3Button>
           } {!wallet &&
             <Web3Button
